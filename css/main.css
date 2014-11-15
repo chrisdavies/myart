@@ -1,2 +1,37 @@
 ﻿body {
+    font-family: sans-serif;
+    background: #FFFFF5;
+    padding: 3em 5em;
+    color: #444;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.main-title {
+    transform: rotate(90deg);
+    transform-origin: top left;
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    color: #CCC;
+}
+
+/* Thumbs */
+.thumb-list {
+    text-align: center;
+}
+
+.thumb-item {
+    display: inline-block;
+    margin: 1em;
+}
+
+.thumb-img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #EEE;
+    background: #F9F9E9;
 }
