@@ -133,19 +133,21 @@
         year: 2009
     }];
     
-    // Rendering
-    oktmpl.render('thumb-list-template', images).then(function (result) {
-        $('body').append(result);
-    });
+    // Routing
+    var r = new Rlite();
 
-    // Behaviors
-    $('body').on('click', '.back-link', function () {
+    // Default route
+    r.add('', function () {
         $('.full-item').remove();
-        return false;
+        $('.thumb-list').css('visibility', 'visible');
+
+        !$('.thumb-list').length && oktmpl.render('thumb-list-template', images).then(function (result) {
+            $('body').append(result);
+        });
     });
 
-    $('body').on('click', '.show-image', function () {
-        var imgname = $(this).data('imgname'),
+    r.add('img/:name', function (r) {
+        var imgname = r.params.name,
             img;
 
         images.some(function (i) {
@@ -158,9 +160,24 @@
         });
 
         img && oktmpl.render('full-item-template', img).then(function (result) {
+            $('.thumb-list').css('visibility', 'hidden');
             $('body').append(result);
+            scrollTo(0, 0);
         });
+    });
 
+    // Hash-based routing
+    function processHash() {
+        var hash = location.hash || '#';
+        r.run(hash.substr(1));
+    }
+
+    window.addEventListener('hashchange', processHash);
+    processHash();
+    
+    // Behaviors
+    $('body').on('click', '.back-link', function () {
+        document.location.hash = '';
         return false;
     });
 

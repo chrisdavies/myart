@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1 class="main-title">Christopher Davies @rt</h1>
-
+    
     <script type="text/html" id="full-item-template">
         <div class="full-item">
             <a href="#" class="back-link">x</a>
@@ -27,7 +27,7 @@
         <ul class="thumb-list">
             $$for img in this
             <li class="thumb-item">
-                <a class="show-image" href="#" data-imgname="{{img.name}}">
+                <a class="show-image" href="#img/{{img.name}}">
                     <img class="thumb-img" src="art/{{img.name}}_thumb.jpg" />
                 </a>
             </li>
@@ -37,6 +37,7 @@
     
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/oktmpl.js"></script>
+    <script src="js/rlite.js"></script>
     <script src="js/art.js"></script>
 </body>
 </html>
