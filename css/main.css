@@ -111,3 +111,41 @@ a {
     float: right;
     margin-left: 0.5em;
 }
+
+@media all and (max-width: 650px) {
+    body {
+        padding: 1em;
+    }
+
+    .main-title {
+        transform: none;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    .thumb-img {
+        max-height: 120px;
+        max-width: 120px;
+    }
+
+    .full-item {
+        top: 7em;
+        left: 0;
+        right: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .full-item-content {
+        padding: 0;
+        text-align: left;
+    }
+
+    .back-link {
+        display: none;
+    }
+}
