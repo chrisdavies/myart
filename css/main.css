@@ -156,6 +156,7 @@ a {
     }
 
     .full-item-content {
+        position: static;
         padding: 0;
         text-align: left;
     }
@@ -163,10 +164,6 @@ a {
     .back-link {
         position: absolute;
         right: 0em;
-        top: -2rem;
-        height: 1.5rem;
-        overflow: hidden;
-        padding: 0.25em 1em;
-        box-sizing: border-box;
+        top: -7rem;
     }
 }
