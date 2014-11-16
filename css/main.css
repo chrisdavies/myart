@@ -67,17 +67,17 @@ a {
     position: absolute;
     overflow: auto;
     top: 0;
-    left: 7em;
+    left: 6em;
     right: 0;
     min-height: 100%;
     background: #FFF;
-    border-left: 1px solid #DDD;
 }
 
 .full-item-content {
+    position: relative;
     max-width: 80%;
     display: inline-block;
-    padding: 4em;
+    padding: 4em 1em;
 }
 
 .full-img {
@@ -88,14 +88,16 @@ a {
 
 .back-link {
     display: inline-block;
+    color: #FFF;
+    background: #DDD;
+    position: absolute;
+    top: 0;
+    right: -4em;
     padding: 1em;
-    border: 1px solid #DDD;
-    position: fixed;
-    top: 1em;
-    left: 5.5em;
-    text-decoration: none;
-    color: #AAA;
-    background: #FFF;
+}
+
+.back-link:hover {
+    background: #444;
 }
 
 .img-year,
@@ -110,6 +112,18 @@ a {
     color: #999;
     float: right;
     margin-left: 0.5em;
+}
+
+.loading .full-item-content {
+    display: none;
+}
+
+.full-item.loading:after {
+    content: 'Loading...';
+    color: #DDD;
+    font-size: 2em;
+    display: block;
+    padding: 3em;
 }
 
 @media all and (max-width: 650px) {
@@ -146,6 +160,8 @@ a {
     }
 
     .back-link {
-        display: none;
+        position: fixed;
+        right: 1em;
+        padding: 0.25em 1em;
     }
 }

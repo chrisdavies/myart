@@ -163,13 +163,23 @@
         });
 
         img && oktmpl.render('full-item-template', img).then(function (result) {
+            var resultHtml = $(result);
             $('.thumb-list').css('visibility', 'hidden');
-            $('body').append(result);
+            $('body').append(resultHtml);
 
             scrollPos.x = window.pageXOffset;
             scrollPos.y = window.pageYOffset;
 
             scrollTo(0, 0);
+
+            var imgLoader = new Image();
+
+            imgLoader.addEventListener('load', function () {
+                $('.full-img', resultHtml).attr('src', imgLoader.src);
+                resultHtml.removeClass('loading');
+            });
+
+            imgLoader.src = 'art/' + imgname + '_full.jpg';
         });
     });
 
