@@ -112,6 +112,11 @@
         medium: 'Pen',
         year: 2011
     }, {
+        name: 'dreams',
+        title: 'Dreams',
+        medium: 'Oil',
+        year: 2010
+    }, {
         name: 'sunsetworld',
         title: 'Sunset World',
         medium: 'Acrylic',
@@ -139,5 +144,24 @@
         return false;
     });
 
+    $('body').on('click', '.show-image', function () {
+        var imgname = $(this).data('imgname'),
+            img;
+
+        images.some(function (i) {
+            if (i.name === imgname) {
+                img = i;
+                return true;
+            }
+
+            return false;
+        });
+
+        img && oktmpl.render('full-item-template', img).then(function (result) {
+            $('body').append(result);
+        });
+
+        return false;
+    });
 
 })();

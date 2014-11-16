@@ -27,7 +27,9 @@
         <ul class="thumb-list">
             $$for img in this
             <li class="thumb-item">
-                <img class="thumb-img" src="art/{{img.name}}_thumb.jpg" />
+                <a class="show-image" href="#" data-imgname="{{img.name}}">
+                    <img class="thumb-img" src="art/{{img.name}}_thumb.jpg" />
+                </a>
             </li>
             $$end-for
         </ul>
