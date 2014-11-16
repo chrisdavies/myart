@@ -145,6 +145,7 @@
 
         !$('.thumb-list').length && oktmpl.render('thumb-list-template', images).then(function (result) {
             $('body').append(result);
+            $('.thumb-list img').unveil();
         });
     });
 
