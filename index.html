@@ -8,83 +8,33 @@
 <body>
     <h1 class="main-title">Christopher Davies @rt</h1>
 
-    <ul class="thumb-list">
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/castle_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/morningstar_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/baloon_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/desales_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/doodles_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/owl_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldensea_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenstars_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenforest_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenmonster_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenships_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenlion_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldenislands_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/aldensis_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/sirbeaverton_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/christmastrees_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/christmashills_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/cat_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/birds_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/busboy_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/airship_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/dreams_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/sunsetworld_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/octopus_thumb.jpg" />
-        </li>
-        <li class="thumb-item">
-            <img class="thumb-img" src="art/marscreature_thumb.jpg" />
-        </li>
-    </ul>
+    <script type="text/html" id="full-item-template">
+        <div class="full-item">
+            <a href="#" class="back-link">x</a>
 
+            <div class="full-item-content">
+                <img class="full-img" src="art/{{name}}_full.jpg" />
+                <footer class="full-info">
+                    <h2 class="img-title">{{title}}</h2>
+                    <span class="img-medium">{{medium}}</span>
+                    <span class="img-year">{{year}}</span>
+                </footer>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="thumb-list-template">
+        <ul class="thumb-list">
+            $$for img in this
+            <li class="thumb-item">
+                <img class="thumb-img" src="art/{{img.name}}_thumb.jpg" />
+            </li>
+            $$end-for
+        </ul>
+    </script>
+    
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/oktmpl.js"></script>
+    <script src="js/art.js"></script>
 </body>
 </html>

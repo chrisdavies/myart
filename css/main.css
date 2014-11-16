@@ -9,6 +9,10 @@ h1 {
     font-size: 3em;
 }
 
+h2 {
+    font-size: 1.5em;
+}
+
 .main-title {
     transform: rotate(90deg);
     transform-origin: top left;
@@ -25,7 +29,13 @@ h1 {
 
 .thumb-item {
     display: inline-block;
-    margin: 1em;
+    padding: 1em;
+}
+
+.thumb-item:hover {
+    outline: 1px solid #EEE;
+    box-shadow: #559 0 0 1.5em;
+    background: #FFF;
 }
 
 .thumb-img {
@@ -34,4 +44,52 @@ h1 {
     height: 200px;
     border: 1px solid #EEE;
     background: #F9F9E9;
+}
+
+/* Full image */
+.full-item {
+    z-index: 100;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 7em;
+    right: 0;
+    bottom: 0;
+    background: #FFF;
+    border-left: 1px solid #DDD;
+}
+
+.full-item-content {
+    display: inline-block;
+    padding: 4em;
+}
+
+.full-img {
+    margin-bottom: 1.5em;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid #DDD;
+    position: fixed;
+    top: 1em;
+    left: 5.5em;
+    text-decoration: none;
+    color: #AAA;
+    background: #FFF;
+}
+
+.img-year,
+.img-medium,
+.img-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.img-year,
+.img-medium {
+    color: #999;
+    float: right;
+    margin-left: 0.5em;
 }
