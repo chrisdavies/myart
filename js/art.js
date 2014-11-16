@@ -136,6 +136,8 @@
     // Routing
     var r = new Rlite();
 
+    var scrollPos = { x: 0, y: 0 };
+
     // Default route
     r.add('', function () {
         $('.full-item').remove();
@@ -162,6 +164,10 @@
         img && oktmpl.render('full-item-template', img).then(function (result) {
             $('.thumb-list').css('visibility', 'hidden');
             $('body').append(result);
+
+            scrollPos.x = window.pageXOffset;
+            scrollPos.y = window.pageYOffset;
+
             scrollTo(0, 0);
         });
     });
@@ -178,6 +184,7 @@
     // Behaviors
     $('body').on('click', '.back-link', function () {
         document.location.hash = '';
+        scrollTo(scrollPos.x, scrollPos.y);
         return false;
     });
 
